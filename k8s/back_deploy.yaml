@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deploy 
+  labels:
+    name: backend-deploy
+    app: bootapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      name: backend-pod
+      app: bootapp
+  template:
+    metadata:
+      name: backend-pod
+      labels:
+        name: backend-pod
+        app: bootapp
+    spec:
+      containers:
+        - name: backend
+          image: hk328/bootapp1_back_img2:latest
+          ports:
+          - containerPort: 8000
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://database:3306/bc_25_gc
+            - name: SPRING_DATASOURCE_USERNAME
+              value: gc
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: Gc@12345
+            - name: SPRING_DATASOURCE_ROOT_PASSWORD
+              value: Gc@12345
+---
+
+apiVersion: v1
+kind: Service
+metadata: 
+  name: backend-service
+spec:
+  selector:
+    name: backend-pod
+    app: bootapp  
+  ports:
+    - port: 8080
+      targetPort: 8000

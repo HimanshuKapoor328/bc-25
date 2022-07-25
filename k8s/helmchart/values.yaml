@@ -1,0 +1,31 @@
+frontend:
+  replicas: 1
+  image: hk328/bootapp1_front_newimg2:latest
+  containerPort: 8080
+  env:
+    url: http://jobfind.com/
+  service:
+    port: 8080
+  host: find.job.example.com
+  
+
+
+backend:
+  replicas: 1
+  image: hk328/bootapp1_back_img2:latest
+  containerPort: 8000
+  dataSourceUrl: jdbc:mysql://database:3306/bc_25_gc
+  dataSourceUsername: gc
+  dataSourcePassword: Gc@12345
+  host: jobfind.com  
+  service:
+    port: 8080
+    targetPort: 8000
+
+database:
+  replicas: 1
+  image: hk328/bootapp1_db_img1:latest
+  containerPort: 3306
+  databaseName: bc_25_gc
+  service:
+    port: 3306

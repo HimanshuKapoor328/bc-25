@@ -1,0 +1,44 @@
+version: '3.1'
+
+services:
+  frontend:
+    image: hk328/bootapp1_front_img:latest
+    container_name: frontend
+    ports:
+      - 8080:8080
+    depends_on:
+      - backend  
+    
+        
+  
+  backend:
+    image: hk328/bootapp1_back_img2:latest
+    container_name: backend
+    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://database:3306/bc_25_gc
+      - SPRING_DATASOURCE_USERNAME=gc
+      - SPRING_DATASOURCE_PASSWORD=Gc@12345
+      - SPRING_DATASOURCE_ROOT_PASSWORD=Gc@12345
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - 8000:8000
+    depends_on:
+     db:  
+        condition: service_healthy   
+
+  db:
+    image: hk328/bootapp1_db_img1:latest
+    container_name: database
+    restart: always
+    environment:
+      MYSQL_PASSWORD: Gc@12345
+      MYSQL_USER: gc
+      MYSQL_DATABASE: bc_25_gc
+      MYSQL_ROOT_PASSWORD: Gc@12345
+    ports:
+      - 3305:3306
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+
+    

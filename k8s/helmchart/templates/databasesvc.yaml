@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: database
+spec:
+  selector:
+    name: database-pod
+    app: bootapp
+  ports:
+  - port: {{ .Values.database.service.port }}
+    targetPort: {{ .Values.database.service.port }}

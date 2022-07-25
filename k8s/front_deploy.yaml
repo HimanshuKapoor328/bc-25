@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deploy 
+  labels:
+    name: frontend-deploy
+    app: bootapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      name: frontend-pod
+      app: bootapp
+  template:
+    metadata:
+      name: frontend-pod
+      labels:
+        name: frontend-pod
+        app: bootapp
+    spec:
+      containers:
+        - name: frontend
+          image: hk328/bootapp1_front_newimg2:latest
+          ports:
+          - containerPort: 8080
+          env:
+            - name: URL_BACKEND
+              value: http://jobfind.com/
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    name: frontend-pod
+    app: bootapp
+  ports:
+    - port: 8080
+      targetPort: 8080
