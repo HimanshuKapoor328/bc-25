@@ -7,17 +7,17 @@ C="3.0"
 D="4.0"
 if [[ "$value" = "$A" ]];
 then
-  python3 /home/himank/assignment/bootcamp_25_gc-dev2/p1.py
+  python3 /home/runner/work/bc-25/bc-25/p1.py
 elif [[ "$value" = "$B" ]];
 then
-  python3 /home/himank/assignment/bootcamp_25_gc-dev2/p2.py
+  python3 /home/runner/work/bc-25/bc-25/p2.py
 elif [[ "$value" = "$C" ]];
 then
-  python3 /home/himank/assignment/bootcamp_25_gc-dev2/p3.py
+  python3 /home/runner/work/bc-25/bc-25/p3.py
 elif [[ "$value" = "$D" ]];
 then
-  python3 /home/himank/assignment/bootcamp_25_gc-dev2/p4.py
+  python3 /home/runner/work/bc-25/bc-25/p4.py
 else
-  python3 /home/himank/assignment/bootcamp_25_gc-dev2/p5.py
+  python3 /home/runner/work/bc-25/bc-25/p5.py
 fi
 
