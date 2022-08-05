@@ -15,7 +15,7 @@
 	<description>GreenCommute Application</description>
 	<properties>
 		<java.version>11</java.version>
-		<sonar.organization>zemoso-int</sonar.organization>
+		<sonar.organization>himank328</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.sources>src/main/java</sonar.sources>
 		<sonar.coverage.exclusions>
