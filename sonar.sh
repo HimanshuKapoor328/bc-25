@@ -25,4 +25,3 @@ then
 else
   python3 /home/runner/work/bc-25/bc-25/p5.py
 fi
-
