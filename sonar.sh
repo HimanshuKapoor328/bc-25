@@ -28,4 +28,4 @@ else
 fi
 
 export VALUE1
-python3 /home/runner/work/bc-25/bc-25/p1.py
+python3 /home/runner/work/bc-25/bc-25/msg.py
