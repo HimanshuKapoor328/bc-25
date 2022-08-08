@@ -6,7 +6,7 @@ ACCESS_TOKEN=os.environ["ACCESS_TOKEN"]
 REATING=os.environ["value"]
 send_by="Himanshu"
 sub= "bug report"
-msg= "Current Quality Status is " + REATING + ", https://sonarcloud.io/dashboard?id=HimanshuKapoor328_bc-25&branch=master" 
+msg= "Current Quality Status is " + chr(REATING+64) + ", https://sonarcloud.io/dashboard?id=HimanshuKapoor328_bc-25&branch=master" 
 
 urldest= 'https://cliq.zoho.com/api/v2/channelsbyname/sonartest/message'
 
