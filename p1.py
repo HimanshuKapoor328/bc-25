@@ -3,9 +3,10 @@
 import requests,json,sys,os
 
 ACCESS_TOKEN=os.environ["ACCESS_TOKEN"]
+REATING=os.environ["VAULE1"]
 send_by="Himanshu"
 sub= "bug report"
-msg= 'Current Quality Status is A , "https://sonarcloud.io/dashboard?id=HimanshuKapoor328_bc-25&branch=master" '
+msg= "Current Quality Status is " + REATING + ", https://sonarcloud.io/dashboard?id=HimanshuKapoor328_bc-25&branch=master" 
 
 urldest= 'https://cliq.zoho.com/api/v2/channelsbyname/sonartest/message'
 
