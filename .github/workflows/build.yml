@@ -20,5 +20,4 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Zoho-cliq
         run: |
-           pwd 
            bash sonar.sh  
