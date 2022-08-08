@@ -2,7 +2,7 @@ export ACCESS_TOKEN=$(curl -X POST "https://accounts.zoho.com/oauth/v2/token?cli
 
 value=$(curl -s "https://sonarcloud.io/api/measures/component?component=HimanshuKapoor328_bc-25&metricKeys=reliability_rating" | jq '.["component"]["measures"][0]["value"]')
 # value=$(echo $record | jq -r '.baseComponent.measures[0].value')
-# export value
+export value
 
 python3 /home/runner/work/bc-25/bc-25/msg.py
 
