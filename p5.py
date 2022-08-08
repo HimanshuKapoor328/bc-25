@@ -1,27 +1,27 @@
 #!/usr/bin/env python
 
-import requests,json,sys
+import requests,json,sys,os
 
-token="1000.bc17bd15b79c96341f94c350d476373a.f66ee711e088c00aae37c7dd88ff264d"
-sentby="Himanshu"
-subject= "bug report"
-message= 'Current Quality Status is E , "https://sonarcloud.io/dashboard?id=HimanshuKapoor328_bc-25&branch=master" '
+ACCESS_TOKEN=os.environ["ACCESS_TOKEN"]
+send_by="Himanshu"
+sub= "bug report"
+msg= 'Current Quality Status is E , "https://sonarcloud.io/dashboard?id=HimanshuKapoor328_bc-25&branch=master" '
 
 urldest= 'https://cliq.zoho.com/api/v2/channelsbyname/sonartest/message'
 
 headers = {
         "Content-type": "application/json",
-        "Authorization": "Zoho-oauthtoken " + (token)
+        "Authorization": "Zoho-oauthtoken " + (ACCESS_TOKEN)
         }
 
 content = {
-                "text": (message),
+                "text": (msg),
                 "broadcast" :"true",
                 "bot": {
-                        "name": (sentby)
+                        "name": (send_by)
                         },
                 "card": {
-                        "title": (subject),
+                        "title": (sub),
                         "theme": "modern-inline"
                         }
                 }
