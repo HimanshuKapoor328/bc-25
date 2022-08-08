@@ -3,7 +3,7 @@
 import requests,json,sys,os
 
 ACCESS_TOKEN=os.environ["ACCESS_TOKEN"]
-REATING=os.environ["VAULE1"]
+REATING=os.environ["VALUE1"]
 send_by="Himanshu"
 sub= "bug report"
 msg= "Current Quality Status is " + REATING + ", https://sonarcloud.io/dashboard?id=HimanshuKapoor328_bc-25&branch=master" 
