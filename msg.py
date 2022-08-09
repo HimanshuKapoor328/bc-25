@@ -10,7 +10,7 @@ msg= "Current Quality Status is " + RATING + ", https://sonarcloud.io/dashboard?
 
 urldest= 'https://cliq.zoho.com/api/v2/channelsbyname/sonartest/message'
 
-headers = {
+header = {
         "Content-type": "application/json",
         "Authorization": "Zoho-oauthtoken " + (ACCESS_TOKEN)
         }
@@ -28,4 +28,4 @@ content = {
                 }
 
 
-post = requests.post(url=urldest, data=json.dumps(content), headers=headers)
+post = requests.post(url=urldest, data=json.dumps(content), headers=header)
