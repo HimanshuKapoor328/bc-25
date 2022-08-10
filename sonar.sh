@@ -3,4 +3,4 @@ export ACCESS_TOKEN=$(curl -X POST "https://accounts.zoho.com/oauth/v2/token?cli
 record=$(curl -s "https://sonarcloud.io/api/measures/component?component=HimanshuKapoor328_bc-25&metricKeys=reliability_rating")
 export value=$(echo $record | jq -r '.component.measures[0].value')
 
-python3 /home/runner/work/bc-25/bc-25/msg.py
+python3 /var/lib/jenkins/workspace/testproject2_sonar/msg.py
